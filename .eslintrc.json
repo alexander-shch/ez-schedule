@@ -1,0 +1,98 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "parserOptions": {
+      "project": "tsconfig.json",
+      "tsconfigRootDir": "."
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "eslint-plugin-import",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "printWidth": 110,
+      "tabWidth": 2,
+      "singleQuote": true,
+      "trailingComma": "all",
+      "bracketSpacing": true,
+      "semi": true,
+      "useTabs": false,
+      "jsxBracketSameLine": false
+    }],
+    "array-bracket-spacing": "warn",
+    "linebreak-style": ["error", "unix"],
+    "no-alert": 1,
+    "no-console": [
+      2,
+      {
+        "allow": ["debug", "error"]
+      }
+    ],
+
+    "@typescript-eslint/no-empty-function": 1,
+    "quotes": [
+      "error",
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ],
+    "react/prop-types": 0,
+    "semi": ["error", "always"],
+    "no-duplicate-imports": 2,
+    "no-unsafe-finally": 1,
+    "no-else-return": 2,
+    "no-var": 2,
+    "no-unneeded-ternary": 2,
+    "no-unused-vars": 2,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+    ],
+    "import/order": [
+      2,
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "no-unused-expressions": 2,
+    "no-empty": 2
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}
