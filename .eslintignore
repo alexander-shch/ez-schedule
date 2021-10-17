@@ -4,5 +4,6 @@ android
 ios
 webpack.*
 **/*.spec.*
+**/*-spec.*
 jest.config.js
 *.js
