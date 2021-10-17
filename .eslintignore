@@ -1,0 +1,8 @@
+node_modules
+dist
+android
+ios
+webpack.*
+**/*.spec.*
+jest.config.js
+*.js

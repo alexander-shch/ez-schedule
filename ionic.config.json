@@ -1,0 +1,7 @@
+{
+  "name": "ez-schedule",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

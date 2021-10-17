@@ -1,0 +1,95 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "eslint:recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "prettier"
+      ],
+      "plugins": [
+        "prettier"
+      ],
+      "rules": {
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": ["Page", "Component"]
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "import/order": [
+          2,
+          {
+            "groups": ["builtin", "external", "internal"],
+            "pathGroups": [
+              {
+                "pattern": "@angular",
+                "group": "external",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["@angular"],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "prettier/prettier": ["error", {
+          "printWidth": 110,
+          "tabWidth": 2,
+          "singleQuote": true,
+          "trailingComma": "all",
+          "bracketSpacing": true,
+          "semi": true,
+          "useTabs": false,
+          "jsxBracketSameLine": false,
+          "endOfLine": "auto",
+          "jsxSingleQuote": true,
+          "parser": "typescript"
+        }, {
+          "usePrettierrc": false
+        }],
+        "no-duplicate-imports":"error",
+        "no-console":"error",
+        "no-empty": "error",
+        "no-unused-labels":"error",
+        "no-unused-vars": "error",
+        "no-unused-expressions": "error",
+        "no-eval": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
